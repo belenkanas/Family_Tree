@@ -25,6 +25,12 @@ namespace Program
             n3.AddChildren(n7);
 
             // visitar el árbol aquí
+            Person p1 = new Person("Ana", 40);
+            Person p2 = new Person
+        
+        
+        
+        
         }
     }
 }
