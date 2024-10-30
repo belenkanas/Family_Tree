@@ -25,6 +25,7 @@ namespace Program
             n3.AddChildren(n7);
 
             // visitar el árbol aquí
+<<<<<<< HEAD
 
             //Se crean los nodos del arbol genealógico
             Node<Person> hijo = new Node<Person>(new Person("Hijo", 10));
@@ -48,6 +49,26 @@ namespace Program
         
         
         
+=======
+            Person p1 = new Person("Ana", 40);
+            Person p2 = new Person("Belen", 19);
+            Person p3 = new Person("Valentina", 19);
+            Person p4 = new Person("Jorge", 19);
+            Person p5 = new Person("Matias", 19);
+            Person p6 = new Person("Sebastian", 37);
+            Person p7 = new Person("Angel", 55);
+            
+            
+            p1.AddPerson(p2);
+            p1.AddPerson(p3);
+            
+            p2.AddPerson(p4);
+            p2.AddPerson(p5);
+            
+            p3.AddPerson(p6);
+            p3.AddPerson(p7);
+            
+>>>>>>> 6ef430c141274ae2aa6fefdc7266fe393e1bc1ee
         }
     }
 }
