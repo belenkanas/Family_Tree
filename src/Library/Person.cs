@@ -5,7 +5,8 @@ using System;
 
 namespace Library;
 
-public class Person{
+public class Person
+{
    
     private List<Person> people = new List<Person>();
     public string Name {get; set;}
