@@ -26,24 +26,13 @@ namespace Program
 
             // visitar el árbol aquí
             Person p1 = new Person("Ana", 40);
-<<<<<<< HEAD
             Person p2 = new Person("Belen", 19);
             Person p3 = new Person("Valentina", 19);
             Person p4 = new Person("Jorge", 19);
             Person p5 = new Person("Matias", 19);
             Person p6 = new Person("Sebastian", 37);
             Person p7 = new Person("Angel", 55);
-        
-        
-        
-        
-=======
-            Person p2 = new Person("Alfonso", 55);
-            Person p3 = new Person("Nicolas", 21);
-            Person p4 = new Person("Sara", 33);
-            Person p5 = new Person("Matías", 18);
-            Person p6 = new Person("Pedro", 28);
-            Person p7 = new Person("Lara", 16);
+            
             
             p1.AddPerson(p2);
             p1.AddPerson(p3);
@@ -54,7 +43,6 @@ namespace Program
             p3.AddPerson(p6);
             p3.AddPerson(p7);
             
->>>>>>> fc3f50a69ab32385e4502fb7e12defab2966ec68
         }
     }
 }
