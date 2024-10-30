@@ -1,0 +1,8 @@
+namespace Library;
+public static class NodeExtensions
+{
+    public static void Accept<T>(this Node<T> node, Visitor<T> visitor)
+    {
+        visitor.Visit(node);
+    }
+}

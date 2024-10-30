@@ -1,0 +1,18 @@
+namespace Library;
+public class SumarEdadesVisitor : Visitor<Person>
+{
+    public int SumaEdad {get; private set;} = 0;
+
+    public override void Visit(Node<Person> node)
+    {
+        if (node.Children.Count == 0)
+        {
+            SumaEdad += node.Data.Edad;
+        }
+
+        foreach (var child in node.Children)
+        {
+            child.Accept(this);
+        }
+    }
+}

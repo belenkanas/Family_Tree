@@ -4,11 +4,10 @@ using System;
 
 namespace Library
 {
-    public class Node
+    public class Node<T> where T: new()
     {
         private int number;
-
-        private List<Node> children = new List<Node>();
+        private List<T> children = new List<T>();
 
         public int Number {
             get
@@ -17,21 +16,33 @@ namespace Library
             }
         }
 
-        public ReadOnlyCollection<Node> Children {
+        public ReadOnlyCollection<T> Children {
             get
             {
                 return this.children.AsReadOnly();
             }
         }
 
-        public Node(int number)
+        public static int Edad { get; internal set; }
+
+        public Node()
         {
-            this.number = number;
+            
         }
 
-        public void AddChildren(Node n)
+        public void AddChildren(T n)
         {
             this.children.Add(n);
+        }
+
+        internal void Accept(HijoMayorVisitor hijoMayorVisitor)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Accept(NombreLargoVisitor nombreLargoVisitor)
+        {
+            throw new NotImplementedException();
         }
     }
 }
