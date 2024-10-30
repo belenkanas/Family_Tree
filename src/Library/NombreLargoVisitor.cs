@@ -1,12 +1,12 @@
 namespace Library;
-public class NombreLargoVisitor : Visitor<Person>
+public class NombreLargoVisitor : IVisitor<Person>
 {
-    public string NombreLargo {get; private set;} = string.Empty;
-    public override void Visit(Node<Person> node)
+    public string NombreLargo {get; private set;} = " ";
+    public void Visit(Node<Person> node)
     {
-        if (node.Data.Name.Length > NombreLargo.Length)
+        if (node.Number.Name.Length > NombreLargo.Length)
         {
-            NombreLargo = node.Data.Name;
+            NombreLargo = node.Number.Name;
         }
 
         foreach (var child in node.Children)

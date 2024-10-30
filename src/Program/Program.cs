@@ -25,16 +25,15 @@ namespace Program
             n3.AddChildren(n7);
 
             // visitar el árbol aquí
-<<<<<<< HEAD
 
             //Se crean los nodos del arbol genealógico
-            Node<Person> hijo = new Node<Person>(new Person("Hijo", 10));
-            Node<Person> hermano = new Node<Person>(new Person("Hermano", 19));
-            Node<Person> padre = new Node<Person>(new Person("Padre", 45));
-            Node<Person> madre = new Node<Person>(new Person("Madre", 45));
-            Node<Person> tio = new Node<Person>(new Person("Tio", 39));
-            Node<Person> abuelo = new Node<Person>(new Person("Abuelo", 80));
-            Node<Person> abuela = new Node<Person>(new Person("Abuela", 75));
+            Node<Person> hijo = new Node<Person>(new Person("Ana", 10));
+            Node<Person> hermano = new Node<Person>(new Person("Pedro", 19));
+            Node<Person> padre = new Node<Person>(new Person("Nicolas", 45));
+            Node<Person> madre = new Node<Person>(new Person("Belén", 45));
+            Node<Person> tio = new Node<Person>(new Person("Jorge", 39));
+            Node<Person> abuelo = new Node<Person>(new Person("Matías", 80));
+            Node<Person> abuela = new Node<Person>(new Person("María", 75));
 
             //Se construye el arbol.
             abuelo.AddChildren(padre);
@@ -45,30 +44,17 @@ namespace Program
             padre.AddChildren(hermano);
             madre.AddChildren(hermano);
 
-            
-        
-        
-        
-=======
-            Person p1 = new Person("Ana", 40);
-            Person p2 = new Person("Belen", 19);
-            Person p3 = new Person("Valentina", 19);
-            Person p4 = new Person("Jorge", 19);
-            Person p5 = new Person("Matias", 19);
-            Person p6 = new Person("Sebastian", 37);
-            Person p7 = new Person("Angel", 55);
-            
-            
-            p1.AddPerson(p2);
-            p1.AddPerson(p3);
-            
-            p2.AddPerson(p4);
-            p2.AddPerson(p5);
-            
-            p3.AddPerson(p6);
-            p3.AddPerson(p7);
-            
->>>>>>> 6ef430c141274ae2aa6fefdc7266fe393e1bc1ee
+            SumarEdadesVisitor visitor = new SumarEdadesVisitor();
+            abuelo.Accept(visitor);
+            Console.WriteLine($"Edad total: {visitor.Sum}");
+
+            HijoMayorVisitor hijoMayor = new HijoMayorVisitor();
+            abuelo.Accept(hijoMayor);
+            Console.WriteLine($"Edad del hijo mayor: {hijoMayor.EdadMax}");
+
+            NombreLargoVisitor nombreLargo = new NombreLargoVisitor();
+            abuelo.Accept(nombreLargo);
+            Console.WriteLine($"Nombre más largo de la familia: {nombreLargo.NombreLargo}");
         }
     }
 }
