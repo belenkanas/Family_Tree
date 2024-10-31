@@ -1,7 +1,7 @@
 namespace Library;
 public class NombreLargoVisitor : IVisitor<Person>
 {
-    public string NombreLargo {get; private set;} = " ";
+    public string NombreLargo {get; private set;} = "";
     public void Visit(Node<Person> node)
     {
         if (node.Number.Name.Length > NombreLargo.Length)

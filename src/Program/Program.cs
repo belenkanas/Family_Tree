@@ -7,7 +7,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Node<int> n1 = new Node<int>(1);
+            /*Node<int> n1 = new Node<int>(1);
             Node<int> n2 = new Node<int>(2);
             Node<int> n3 = new Node<int>(3);
             Node<int> n4 = new Node<int>(4);
@@ -23,34 +23,34 @@ namespace Program
 
             n3.AddChildren(n6);
             n3.AddChildren(n7);
+            */
 
             // visitar el árbol aquí
 
             //Se crean los nodos del arbol genealógico
-            Node<Person> hijo = new Node<Person>(new Person("Ana", 10));
-            Node<Person> hermano = new Node<Person>(new Person("Pedro", 19));
-            Node<Person> padre = new Node<Person>(new Person("Nicolas", 45));
-            Node<Person> madre = new Node<Person>(new Person("Belén", 45));
-            Node<Person> tio = new Node<Person>(new Person("Jorge", 39));
             Node<Person> abuelo = new Node<Person>(new Person("Matías", 80));
             Node<Person> abuela = new Node<Person>(new Person("María", 75));
+            Node<Person> padre = new Node<Person>(new Person("Nicolas", 45));
+            Node<Person> madre = new Node<Person>(new Person("Belén", 45));
+            Node<Person> tio = new Node<Person>(new Person("Jorge", 29));
+            Node<Person> hijo = new Node<Person>(new Person("Ana", 10));
+            Node<Person> hermano = new Node<Person>(new Person("Pedro", 19));
+            ;
+            
 
             //Se construye el arbol.
             abuelo.AddChildren(padre);
-            abuela.AddChildren(padre);
             abuelo.AddChildren(tio);
             padre.AddChildren(hijo);
-            madre.AddChildren(hijo);
             padre.AddChildren(hermano);
-            madre.AddChildren(hermano);
 
-            SumarEdadesVisitor visitor = new SumarEdadesVisitor();
-            abuelo.Accept(visitor);
-            Console.WriteLine($"Edad total: {visitor.Sum}");
+            SumarEdadesVisitor sumarVisitor = new SumarEdadesVisitor();
+            abuelo.Accept(sumarVisitor);
+            Console.WriteLine($"Edad total: {sumarVisitor.Sum}");
 
             HijoMayorVisitor hijoMayor = new HijoMayorVisitor();
             abuelo.Accept(hijoMayor);
-            Console.WriteLine($"Edad del hijo mayor: {hijoMayor.EdadMax}");
+            Console.WriteLine($"Edad del hijo mayor: {hijoMayor.MaxAge}");
 
             NombreLargoVisitor nombreLargo = new NombreLargoVisitor();
             abuelo.Accept(nombreLargo);

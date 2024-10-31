@@ -15,5 +15,10 @@ public class SumarEdadesVisitor: IVisitor<Person>
     public void Visit(Node<Person> node)
     {
         sumaEdad += node.Number.Age;
+        
+        foreach (var child in node.Children)
+        {
+            child.Accept(this);
+        }
     }
 }
