@@ -29,10 +29,10 @@ namespace Program
 
             //Se crean los nodos del arbol genealógico
             Node<Person> abuelo = new Node<Person>(new Person("Matías", 80));
-            Node<Person> abuela = new Node<Person>(new Person("María", 75));
+            Node<Person> abuela = new Node<Person>(new Person("María", 79));
             Node<Person> padre = new Node<Person>(new Person("Nicolas", 45));
-            Node<Person> madre = new Node<Person>(new Person("Belén", 45));
-            Node<Person> tio = new Node<Person>(new Person("Jorge", 29));
+            Node<Person> madre = new Node<Person>(new Person("Belén", 46));
+            Node<Person> tio = new Node<Person>(new Person("Jorge", 56));
             Node<Person> hijo = new Node<Person>(new Person("Ana", 10));
             Node<Person> hermano = new Node<Person>(new Person("Pedro", 19));
             ;

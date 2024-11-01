@@ -33,9 +33,9 @@ namespace Library
         public void Accept(IVisitor<T> visitor)
         {
             visitor.Visit(this);
-            foreach (var item in this.children)
+            foreach (var child in this.children)
             {
-                item.Accept(visitor);
+                child.Accept(visitor);
             }
         }
     }
