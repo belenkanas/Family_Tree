@@ -27,15 +27,16 @@ namespace Program
 
             // visitar el árbol aquí
 
+            
             //Se crean los nodos del arbol genealógico
             Node<Person> abuelo = new Node<Person>(new Person("Matías", 80));
-            Node<Person> abuela = new Node<Person>(new Person("María", 79));
             Node<Person> padre = new Node<Person>(new Person("Nicolas", 45));
-            Node<Person> madre = new Node<Person>(new Person("Belén", 46));
-            Node<Person> tio = new Node<Person>(new Person("Jorge", 56));
+            Node<Person> tio = new Node<Person>(new Person("Jorge", 46));
             Node<Person> hijo = new Node<Person>(new Person("Ana", 10));
             Node<Person> hermano = new Node<Person>(new Person("Pedro", 19));
-            ;
+            Node<Person> primo = new Node<Person>(new Person("Martin", 25));
+            Node<Person> prima = new Node<Person>(new Person("Susana", 15));
+            
             
 
             //Se construye el arbol.
@@ -43,15 +44,21 @@ namespace Program
             abuelo.AddChildren(tio);
             padre.AddChildren(hijo);
             padre.AddChildren(hermano);
+            tio.AddChildren(primo);
+            tio.AddChildren(prima);
 
+            //Suma las edades de todos los participantes del árbol. Tiene que dar 240
             SumarEdadesVisitor sumarVisitor = new SumarEdadesVisitor();
             abuelo.Accept(sumarVisitor);
             Console.WriteLine($"Edad total: {sumarVisitor.Sum}");
 
+            //Retorna a la persona que no tiene hijos y tiene la edad mayor. En este caso retorna la edad del primo hermano mayor (26).
             HijoMayorVisitor hijoMayor = new HijoMayorVisitor();
             abuelo.Accept(hijoMayor);
             Console.WriteLine($"Edad del hijo mayor: {hijoMayor.MaxAge}");
 
+           
+            //Retorna el nombre más largo entre todos los integrantes. En este caso es Nicolás.
             NombreLargoVisitor nombreLargo = new NombreLargoVisitor();
             abuelo.Accept(nombreLargo);
             Console.WriteLine($"Nombre más largo de la familia: {nombreLargo.NombreLargo}");
